@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  resources :currencies
+  resources :checking_accounts
+  resources :savings_accounts
+  resources :exchange_accounts
   resources :users
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!

@@ -1,0 +1,2 @@
+class CheckingAccountsController < ApplicationController
+end

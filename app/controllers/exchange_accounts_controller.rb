@@ -1,0 +1,2 @@
+class ExchangeAccountsController < ApplicationController
+end
