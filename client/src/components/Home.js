@@ -1,27 +1,23 @@
-import React, { useState } from "react";
-
-
+import React, { useEffect, useState } from "react";
 
 
 function Home() {
 
 // Add this in your component file
   // React States
+  let gettingUsername;
+  console.log(gettingUsername)
+  const [User, setUser] = useState([])
   const [errorMessages, setErrorMessages] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
 
 
   // User Login info
-  const database = [
-    {
-      username: "user1",
-      password: "pass1"
-    },
-    {
-      username: "user2",
-      password: "pass2"
-    }
-  ];
+  const getUser = async () => {
+    const req = await fetch(`http://localhost:3000/${gettingUsername}`)
+    const res = await req.json()
+    setUser(res)
+  }
 
   const errors = {
     uname: "invalid username",
@@ -34,8 +30,10 @@ function Home() {
 
     let { uname, pass } = document.forms[0];
 
+    gettingUsername = uname.value
+
     // Find user login info
-    const userData = database.find((user) => user.username === uname.value);
+    const userData = User.find((user) => user.username === uname.value);
 
     // Compare user info
     if (userData) {
@@ -81,10 +79,13 @@ function Home() {
     </div>
   );
 
+  // useEffect(getUser(),[])
+
   return (
     <div className="app">
       <div className="login-form">
         <div className="title"></div>
+        {/* exhange <div>User is successfully logged in</div> with Jerry's component */}
         {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
       </div>
     </div>
