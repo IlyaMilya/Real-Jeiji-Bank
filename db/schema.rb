@@ -10,15 +10,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_01_143405) do
+ActiveRecord::Schema.define(version: 2022_06_02_180814) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "accounts", force: :cascade do |t|
+  create_table "checkings", force: :cascade do |t|
     t.integer "user_id"
     t.float "balance"
-    t.string "account_type"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "currencies", force: :cascade do |t|
+    t.string "name"
+    t.float "price"
+    t.string "image"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "exchanges", force: :cascade do |t|
+    t.integer "user_id"
+    t.float "balance"
+    t.integer "first_cryp_id"
+    t.integer "second_cryp_id"
+    t.integer "third_cryp_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "savings", force: :cascade do |t|
+    t.integer "user_id"
+    t.float "balance"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -26,11 +50,11 @@ ActiveRecord::Schema.define(version: 2022_06_01_143405) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
+    t.string "image"
+    t.string "username"
     t.string "password"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.date "dob"
-    t.string "username"
   end
 
 end
