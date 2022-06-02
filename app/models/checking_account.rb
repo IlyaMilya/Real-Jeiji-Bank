@@ -1,2 +1,0 @@
-class CheckingAccount < ApplicationRecord
-end
