@@ -13,12 +13,12 @@ function AccountContainer() {
 
         <div>
           
-          <h2 className = "name-text">
+          <h1 className = "name-text">
             {/* <span className = "icon">
             <img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3tXHN3VhSpLWkDZmCi0IDyxUM78PgvPqpiw&usqp=CAU"/> 
           </span> */}
           {message}
-          </h2>
+          </h1>
           <span className='avatar'> <img src="https://cdn1.iconfinder.com/data/icons/user-pictures/100/unknown-512.png" /> </span>
 
         </div>

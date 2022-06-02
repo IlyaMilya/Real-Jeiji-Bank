@@ -31,12 +31,18 @@
       width: 80px;
       /* position: relative; */
       float: right;
+
   }
+
   
   .name-text {
-    text-align:right;
+    text-align: center;
     color: aliceblue;
-    padding-top: 0%;
+    /* padding-top: 0%; */
+    display: inline-block;
+    height: 50px; 
+    margin: 30px;
+    padding: 2px;
   }
   
   .btn-group {
