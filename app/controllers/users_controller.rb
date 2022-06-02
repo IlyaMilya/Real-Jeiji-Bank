@@ -1,15 +1,46 @@
 class UsersController < ApplicationController
+    
+
     def index 
-        accounts = Account.all
-        render json: accounts
+        users = User.all
+        render json: users, status: 200
     end
 
-    def show 
-        account = Account.find_by(id: params[:id])
-        if account 
-            render json: account 
-        else
-            render json: {error: "Account not found"}, status: 404
+    def show
+        user = User.find_by(id: params[:id])
+        if user 
+            render json: user, status: 200
+        else 
+            render json: {error: "User not found"}, status:404
         end
     end
+
+    def update 
+        user = User.find_by(id:params[:id])
+        if user 
+            user.update(user_params_permit)
+        render json: user, status: 201
+        else
+            render json: {error: "Not successful"}, status: 422
+        end
+    end
+    
+    def create 
+        newUser = User.create(params.permit) 
+        if newUser.valid?
+            render json: newUser, status:201 
+        else
+            render json: {"errors":"invalid information"}, status: 422
+        end
+    end
+
+
+    private 
+
+    def user_params_permit 
+        params.permit(:name, :email, :image, :username, :password)
+    end
+
+
 end
+
