@@ -1,0 +1,75 @@
+.account-container {
+    font-size: 2em;
+    text-align: center;
+    border: 1px solid green;
+    background: #1c4778
+    ;
+}
+
+.back-btn {
+    border-radius: 10px;
+    position: absolute;
+    left: 7%;
+    top: 7%;
+    padding: 20px;
+}
+
+.back-btn:hover{
+    transform: scale(1.1);
+    background-color: whitesmoke;
+    cursor: pointer;
+}
+
+.account-header {
+    padding: 20px;
+    border-radius: 10px;
+    color: whitesmoke;
+}
+
+.avatar-img {
+    border-radius: 50%;
+    width: 100px;
+    height: auto;
+    position: absolute;
+    right: 8%;
+    border: 1px solid green;
+}
+
+.balance {
+    font-size: 2em;
+    border: 3px solid #1c4778;
+    border-radius: 50%;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    left: 35%;
+    top: 30%;
+}
+.currency-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-top: 8em;
+}
+.currency {
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+    border: 1px solid #1c4778;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+}
+
+.curr-img {
+    height: auto;
+    width: 30%;
+    border-radius: 50%;
+}
