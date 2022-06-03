@@ -36,7 +36,7 @@ function Signup() {
     let { uname, pass, img, dob, fname, imail } = document.forms[0];
 
 
-   await fetch('http://localhost:3000/users', {
+   await fetch('/users', {
             method: 'POST', 
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({

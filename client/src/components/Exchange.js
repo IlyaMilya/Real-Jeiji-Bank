@@ -14,6 +14,27 @@ const [currencyList, setCurrencyList] = useState(data)
 
 
 
+const handleCurrencySubmit = (e) => {
+  e.preventDefault();
+
+  let { name,price,img } = document.forms[0];
+
+  fetch('/currencies', {
+            method: 'POST', 
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({
+                name: name.value,
+                image: img.value,
+                price: price.value,
+            }
+            ) },  
+            )
+
+  }
+
+
+
+
   return (
     <div>
       <div className="account-container">
@@ -26,22 +47,21 @@ const [currencyList, setCurrencyList] = useState(data)
         </h1>
       </div>
 
-      <form className='currency-form'>
+      <form className='currency-form' onSubmit={handleCurrencySubmit}>
         <h1>Submit a new Currency</h1>
         <label>
           Name:
-          <input type='text' />
+          <input type='text' name="name" />
         </label>
         <label>
           Price:
-          <input type='number' />
+          <input type='number' name="price" />
         </label>
         <label>
-          Name:
-          <input type='text' />
+          Image:
+          <input type='text' name="img"/>
         </label>
         <label>
-          Submit
           <input type='submit' />
         </label>
       </form>
