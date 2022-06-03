@@ -82,12 +82,14 @@ function Home() {
   // useEffect(getUser(),[])
 
   return (
+    <div classname="login-page">
     <div className="app">
       <div className="login-form">
         <div className="title"></div>
         {/* exhange <div>User is successfully logged in</div> with Jerry's component */}
         {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
       </div>
+    </div>
     </div>
   );
 }

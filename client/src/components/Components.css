@@ -1,14 +1,57 @@
 .form {
   width: 300px;
   border: 15px solid blue;
+  border-radius: 30%;
   padding: 50px;
   margin: 20px;
+  border: 5px solid #041e42;
+  padding: 70px;
+  /* margin: 20px; */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  zoom:200%;
+
 }
+
+/* body {
+  background-image: url('https://a.c-dn.net/c/content/dam/publicsites/igcom/uk/images/Rebrand/Hero/Other/Forex_Trading_desktop.jpg');
+  background-repeat: no-repeat;
+  
+} */
+
+
+.signup {
+  background-color: #041e42;
+  border: 2px solid red;
+}
+
+.Login-Title {
+  text-align: center;
+  zoom: 180%;
+  color: blue;
+}
+
 
 .form label {
   font-size: medium;
 
 }
+
+.home body {
+  background-color: red;
+}
+
   
 
+.login-page {
+  background: red ;
 
+}
+
+.signupnav {
+  padding: 100;
+  margin: auto;
+  zoom: 300%;
+}
