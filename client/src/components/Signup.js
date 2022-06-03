@@ -36,6 +36,7 @@ function Signup() {
     let { uname, pass, img, fname, imail } = document.forms[0];
 
 
+
     fetch('/users', {
             method: 'POST', 
             headers: {"Content-Type": "application/json"},
