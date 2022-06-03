@@ -4,42 +4,42 @@ class CurrenciesController < ApplicationController
         render json: currencies 
     end
 
- def show 
+def show 
     currency = Currency.find_by(id: params[:id])
     if currency
     render json: currency, status:200 
     else 
     render json: {error: "Currency not found"}, status:404 
- end
+    end
 end
 
  def update 
     currency = Currency.find_by(id: params[:id])
     if currency 
     currency.update
-    render json: currency, status:200 
+    render json: currency, status:201 
     else 
     render json: {error: "update unsuccessful" }
- end
-end
+     end
+    end
 
     def create 
-        currencycreate = Currency.create(params.permit)
+        currencycreate = Currency.create(params_permit)
         if currencycreate.valid?
             render json: currencycreate, status: 201
         else 
         render json: {error: "failed to create"}, status: 422
-    end 
-end
+        end 
+    end
 
 
     def destroy 
         deletecur = Currency.find_by(id:params[:id])
         if deletecur 
             deletecur.destroy 
-            render json: {"Currency deleted"}, status:410
+            head :no_content, status:401
         else 
-            render json: {"Delete unsuccessful"}, status:406
+            render json: {error: "Delete unsuccessful"}, status:422
     end
 
 
@@ -48,5 +48,7 @@ end
     def params_permit 
         params.permit(:name, :price, :image)
     end 
+
+end
 end
 

@@ -1,8 +1,12 @@
 import './AccountPage.css';
+import {Link} from "react-router-dom"
 import React from 'react';
+import Checking from "./components/Checking";
+import Savings from "./components/Savings";
+import Exchange from "./components/Exchange";
 
-function AccountContainer() {
-  const user = "Jerry"
+function AccountContainer({userdata}) {
+  const user = userdata.name
   const message = `Welcome, ${user}`
   return (
     <div className="AccountContainer">
@@ -24,9 +28,16 @@ function AccountContainer() {
         </div>
 
         <div className = "btn-group">
+          <Link to= "/checking">
           <button className="bttns">Checking</button>
+          </Link>
+          <Link to= "/savings">
           <button className="bttns">Savings</button>
+          </Link>
+          <Link to= "/exchanges">
           <button className="bttns">Exchange</button>
+          </Link>
+      
         </div>
 
       </div>
