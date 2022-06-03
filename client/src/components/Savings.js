@@ -1,13 +1,15 @@
-import '.components/accounts.css';
+import './accounts.css';
 import { Link } from 'react-router-dom'
+import NavBar from './NavBar';
 
 const Savings = () => {
   return (
     <div>
+        <NavBar />
     <div className="account-container">
         <h1>
-            <Link to="/home">
-                <button className='back-btn'>Back to Accounts</button>
+            <Link to="/">
+                <button className='back-btn'>Sign out</button>
             </Link>
             <span className="account-header">{"Jacky"}'s Savings Account</span>
             <span className='avatar'> <img src="https://cdn1.iconfinder.com/data/icons/user-pictures/100/unknown-512.png" className='avatar-img' /> </span>

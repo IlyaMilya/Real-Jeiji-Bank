@@ -1,5 +1,6 @@
-import '.components/accounts.css';
+import './accounts.css'
 import { Link } from 'react-router-dom'
+import NavBar from './NavBar';
 import { useState } from 'react'
 import Currency from './Currency'
 
@@ -14,17 +15,58 @@ const [currencyList, setCurrencyList] = useState(data)
 
 
 
+const handleCurrencySubmit = (e) => {
+  e.preventDefault();
+
+  let { name,price,img } = document.forms[0];
+
+  fetch('/currencies', {
+            method: 'POST', 
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({
+                name: name.value,
+                image: img.value,
+                price: price.value,
+            }
+            ) },  
+            )
+
+  }
+
+
+
+
   return (
     <div>
+      <NavBar />
       <div className="account-container">
         <h1>
-          <Link to="/home">
-            <button className='back-btn'>Back to Accounts</button>
+          <Link to="/">
+            <button className='back-btn'>Sign out</button>
           </Link>
           <span className="account-header">{"Jacky"}'s Exchange Account</span>
           <span className='avatar'> <img src="https://cdn1.iconfinder.com/data/icons/user-pictures/100/unknown-512.png" className='avatar-img' /> </span>
         </h1>
       </div>
+
+      <form className='currency-form' onSubmit={handleCurrencySubmit}>
+        <h1>Submit a new Currency</h1>
+        <label>
+          Name:
+          <input type='text' name="name" />
+        </label>
+        <label>
+          Price:
+          <input type='number' name="price" />
+        </label>
+        <label>
+          Image:
+          <input type='text' name="img"/>
+        </label>
+        <label>
+          <input type='submit' />
+        </label>
+      </form>
 
       <div className='currency-container'>
         {

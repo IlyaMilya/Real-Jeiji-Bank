@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     end
 
     def show
-        user = User.find_by(id: params[:id])
+        user = User.find_by(username: params[:username])
         if user 
             render json: user, status: 200
         else 
@@ -26,7 +26,7 @@ class UsersController < ApplicationController
     end
     
     def create 
-        newUser = User.create(params.permit) 
+        newUser = User.create(user_params_permit) 
         if newUser.valid?
             render json: newUser, status:201 
         else
