@@ -9,8 +9,8 @@
 .back-btn {
     border-radius: 10px;
     position: absolute;
-    right: 7%;
-    top: 7%;
+    left: 7%;
+    top: 20%;
     padding: 20px;
 }
 
