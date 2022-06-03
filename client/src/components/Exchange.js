@@ -1,4 +1,4 @@
-import '.components/accounts.css';
+import './accounts.css'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import Currency from './Currency'
@@ -18,7 +18,7 @@ const [currencyList, setCurrencyList] = useState(data)
     <div>
       <div className="account-container">
         <h1>
-          <Link to="/home">
+          <Link to="/accounts">
             <button className='back-btn'>Back to Accounts</button>
           </Link>
           <span className="account-header">{"Jacky"}'s Exchange Account</span>

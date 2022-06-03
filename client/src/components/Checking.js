@@ -1,4 +1,4 @@
-import '.components/accounts.css';
+import './accounts.css';
 import { Link } from 'react-router-dom'
 
 const Checking = () => {
@@ -6,7 +6,7 @@ const Checking = () => {
         <div>
             <div className="account-container">
                 <h1>
-                    <Link to="/home">
+                    <Link to="/accounts">
                         <button className='back-btn'>Back to Accounts</button>
                     </Link>
                     <span className="account-header">{"Jacky"}'s Checking Account</span>
