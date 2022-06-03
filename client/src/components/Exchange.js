@@ -26,6 +26,26 @@ const [currencyList, setCurrencyList] = useState(data)
         </h1>
       </div>
 
+      <form className='currency-form'>
+        <h1>Submit a new Currency</h1>
+        <label>
+          Name:
+          <input type='text' />
+        </label>
+        <label>
+          Price:
+          <input type='number' />
+        </label>
+        <label>
+          Name:
+          <input type='text' />
+        </label>
+        <label>
+          Submit
+          <input type='submit' />
+        </label>
+      </form>
+
       <div className='currency-container'>
         {
           currencyList.map((currency) => {
