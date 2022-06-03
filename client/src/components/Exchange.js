@@ -1,5 +1,6 @@
 import './accounts.css'
 import { Link } from 'react-router-dom'
+import NavBar from './NavBar';
 import { useState } from 'react'
 import Currency from './Currency'
 
@@ -16,10 +17,11 @@ const [currencyList, setCurrencyList] = useState(data)
 
   return (
     <div>
+      <NavBar />
       <div className="account-container">
         <h1>
-          <Link to="/accounts">
-            <button className='back-btn'>Back to Accounts</button>
+          <Link to="/">
+            <button className='back-btn'>Sign out</button>
           </Link>
           <span className="account-header">{"Jacky"}'s Exchange Account</span>
           <span className='avatar'> <img src="https://cdn1.iconfinder.com/data/icons/user-pictures/100/unknown-512.png" className='avatar-img' /> </span>

@@ -1,29 +1,34 @@
 import React, { useEffect, useState } from "react";
-
+import AccountContainer from "../AccountContainer";
 
 function Home() {
 
 // Add this in your component file
   // React States
-  let gettingUsername;
+  let gettingUsername = "";
   console.log(gettingUsername)
-  const [User, setUser] = useState([])
+  const [currentUser, setCurrentUser] = useState('')
   const [errorMessages, setErrorMessages] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [userInfo, setUserInfo] = useState({});
 
 
   // User Login info
-  const getUser = async () => {
-    const req = await fetch(`http://localhost:3000/${gettingUsername}`)
-    const res = await req.json()
-    setUser(res)
-  }
+  
+
 
   const errors = {
     uname: "invalid username",
     pass: "invalid password"
   };
-
+  /*getting user from backend */
+  // const getUser = async () => {
+  //   const req = await fetch(`users/${gettingUsername}`)
+  //   const res = await req.json()
+  //   setCurrentUser(res)
+    
+  // }
+  
   const handleSubmit = (event) => {
     //Prevent page reload
     event.preventDefault();
@@ -33,8 +38,9 @@ function Home() {
     gettingUsername = uname.value
 
     // Find user login info
-    const userData = User.find((user) => user.username === uname.value);
-
+    const userData = currentUser.find((user) => user.username === uname.value);
+console.log(userData)
+setUserInfo(userData) 
     // Compare user info
     if (userData) {
       if (userData.password !== pass.value) {
@@ -79,17 +85,22 @@ function Home() {
     </div>
   );
 
-  // useEffect(getUser(),[])
+   useEffect (async()=>{
+    const req = await fetch(`users/${gettingUsername}`)
+    const res = await req.json()
+    setCurrentUser(res)
+
+   }, [] )
 
   return (
     <div className="app">
       <div className="login-form">
         <div className="title"></div>
         {/* exhange <div>User is successfully logged in</div> with Jerry's component */}
-        {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
+        {isSubmitted ? <AccountContainer userdata = {userInfo} /> : renderForm}
       </div>
     </div>
   );
-}
+  }
 
 export default Home;

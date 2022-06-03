@@ -49,7 +49,7 @@ function Signup() {
             }
             ) },  
             )
-
+            setIsSubmitted(true)
   }
 
   // JSX code for login form

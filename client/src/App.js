@@ -13,7 +13,6 @@ function App() {
   return (
     <div>
       <h1>Jeiji Bank</h1>
-      <NavBar />
       <Switch>
         <Route exact path="/">
           <Home />
