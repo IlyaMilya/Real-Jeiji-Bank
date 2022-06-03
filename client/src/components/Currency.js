@@ -1,4 +1,4 @@
-import '.components/accounts.css';
+import './accounts.css';
 import React from 'react'
 
 const Currency = ({currency}) => {
