@@ -26,7 +26,7 @@ class UsersController < ApplicationController
     end
     
     def create 
-        newUser = User.create(params.permit) 
+        newUser = User.create(user_params_permit) 
         if newUser.valid?
             render json: newUser, status:201 
         else
