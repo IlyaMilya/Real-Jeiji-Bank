@@ -29,14 +29,15 @@ function Signup() {
     fname: "give a proper full name"
   };
 
-  async function handleSubmit(event) {
+   function handleSubmit(event) {
     //Prevent page reload
     event.preventDefault();
 
-    let { uname, pass, img, dob, fname, imail } = document.forms[0];
+    let { uname, pass, img, fname, imail } = document.forms[0];
 
 
-   await fetch('/users', {
+
+    fetch('/users', {
             method: 'POST', 
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({
@@ -45,7 +46,7 @@ function Signup() {
                 image: img.value,
                 username: uname.value,
                 password: pass.value,
-                dob: dob.value,
+
             }
             ) },  
             )
@@ -92,11 +93,7 @@ function Signup() {
           <label>Password </label>
           <input type="password" name="pass" required />
           
-        </div>
-        {/* Confirm Password */}
-        <div className="input-container">
-          <label>Confirm Password </label>
-          <input type="password" name="pass" required />
+        
           
         </div>
         <div className="button-container">
