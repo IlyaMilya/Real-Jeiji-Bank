@@ -8,7 +8,7 @@
 
 .back-btn {
     border-radius: 10px;
-    position: absolute;
+    position: left;
     left: 7%;
     top: 20%;
     padding: 20px;
@@ -70,6 +70,6 @@
 
 .curr-img {
     height: auto;
-    width: 30%;
-    border-radius: 50%;
+    width: 30%; 
+    border-radius: 50%; 
 }

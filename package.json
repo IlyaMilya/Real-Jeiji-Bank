@@ -9,5 +9,43 @@
     "clean": "rm -rf public",
     "deploy": "cp -a client/build/. public/",
     "heroku-postbuild": "npm run clean && npm run build && npm run deploy"
-  }
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "hoist-non-react-statics": "^3.3.2",
+    "isarray": "^0.0.1",
+    "history": "^4.10.1",
+    "js-tokens": "^4.0.0",
+    "path-to-regexp": "^1.8.0",
+    "object-assign": "^4.1.1",
+    "loose-envify": "^1.4.0",
+    "prop-types": "^15.8.1",
+    "react-dom": "^18.1.0",
+    "react": "^18.1.0",
+    "react-router": "^5.2.1",
+    "resolve-pathname": "^3.0.0",
+    "react-is": "^16.13.1",
+    "regenerator-runtime": "^0.13.9",
+    "scheduler": "^0.22.0",
+    "react-router-dom": "^5.3.0",
+    "tiny-warning": "^1.0.3",
+    "value-equal": "^1.0.1",
+    "tiny-invariant": "^1.2.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IlyaMilya/Real-Jeiji-Bank.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IlyaMilya/Real-Jeiji-Bank/issues"
+  },
+  "homepage": "https://github.com/IlyaMilya/Real-Jeiji-Bank#readme"
 }
