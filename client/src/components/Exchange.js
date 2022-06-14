@@ -1,8 +1,8 @@
 import './accounts.css'
 import { Link } from 'react-router-dom'
-import NavBar from './NavBar';
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Currency from './Currency'
+
 
 const Exchange = () => {
 const data = [{name: "doge", price: 1, img: "https://e7.pngegg.com/pngimages/305/230/png-clipart-shiba-inu-dogecoin-akita-cryptocurrency-bitcoin-mammal-cat-like-mammal.png"},
@@ -13,6 +13,17 @@ const data = [{name: "doge", price: 1, img: "https://e7.pngegg.com/pngimages/305
 const [currencyList, setCurrencyList] = useState(data)
 //  setCurrencyList(data)
 
+  const request = async () => {
+    let req = await fetch('/currencies')
+    let res = await req.json()
+    setCurrencyList(res)
+    console.log(res)
+  }
+
+  useEffect(()=>{
+request()
+  }
+  , [] )
 
 
 const handleCurrencySubmit = (e) => {
@@ -38,11 +49,10 @@ const handleCurrencySubmit = (e) => {
 
   return (
     <div>
-      <NavBar />
       <div className="account-container">
         <h1>
-          <Link to="/">
-            <button className='back-btn'>Sign out</button>
+          <Link to="/accounts">
+            <button className='back-btn'>Back to Accounts</button>
           </Link>
           <span className="account-header">{"Jacky"}'s Exchange Account</span>
           <span className='avatar'> <img src="https://cdn1.iconfinder.com/data/icons/user-pictures/100/unknown-512.png" className='avatar-img' /> </span>

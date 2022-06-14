@@ -42,7 +42,6 @@ function App() {
           <Exchange />
         </Route>
       </Switch>
-      <h1>Links</h1>
     </div>
   )
 }

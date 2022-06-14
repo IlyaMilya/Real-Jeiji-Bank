@@ -1,3 +1,4 @@
 class Currency < ApplicationRecord
-    has_many :exchanges
+    belongs_to :user
+    belongs_to :exchange
 end
